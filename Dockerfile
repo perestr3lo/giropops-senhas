@@ -1,7 +1,18 @@
-FROM python:alpine3.19
-COPY . /app
+FROM cgr.dev/chainguard/python:latest-dev as builder
+
 WORKDIR /app
-RUN pip install --no-cache-dir -r requirements.txt && pip install --upgrade flask werkzeug
+COPY requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+FROM cgr.dev/chainguard/python:latest
+
+WORKDIR /app
+COPY --from=builder /home/nonroot/.local/lib/python3.12/site-packages /home/nonroot/.local/lib/python3.12/site-packages
+COPY --from=builder /home/nonroot/.local/bin /home/nonroot/.local/bin
+ENV PATH=PATH:/home/nonroot/.local/bin
+
+COPY . /app
 EXPOSE 5000
-CMD ["flask", "run", "--host=0.0.0.0"]
-HEALTHCHECK --timeout=2s CMD curl -f localhost:5000 || exit 1
+
+ENTRYPOINT [ "flask","run","--host=0.0.0.0" ]
+
