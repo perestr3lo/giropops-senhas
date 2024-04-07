@@ -1,0 +1,21 @@
+version: '3'
+services:
+  giropops-senhas:
+    image: pallestrelli/linuxtips-giropops-senhas:1.0
+    container_name: giropops
+    environment:
+      - REDIS_HOST=redis
+    ports:
+      - "5000:5000"
+    networks:
+      - giropops
+
+  redis: 
+    image: redis:alpine3.19
+    container_name: redis
+    networks:
+      - giropops
+
+networks:
+  giropops:
+    driver: bridge
