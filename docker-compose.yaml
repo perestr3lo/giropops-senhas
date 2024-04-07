@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   giropops-senhas:
     image: pallestrelli/linuxtips-giropops-senhas:1.0
@@ -9,12 +9,24 @@ services:
       - "5000:5000"
     networks:
       - giropops
+    depends_on:
+      - redis
+    
+    deploy:
+      resources:
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
   redis: 
     image: redis:alpine3.19
-    container_name: redis
     networks:
       - giropops
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      timeout: 5s
+      retries: 3
+      start_period: 10s
 
 networks:
   giropops:
