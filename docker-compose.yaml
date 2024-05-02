@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   giropops-senhas:
-    image: pallestrelli/linuxtips-giropops-senhas:1.0
+    image: pallestrelli/linuxtips-giropops-senhas:2.0
     container_name: giropops
     environment:
       - REDIS_HOST=redis
