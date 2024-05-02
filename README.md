@@ -1,4 +1,4 @@
-## Password Manager - LinuxTips 💻
+![image](https://github.com/perestr3lo/giropops-senhas/assets/60358650/5f972408-a088-49b4-8ccd-30b17626da61)## Password Manager - LinuxTips 💻
 
 This project was developed during the first stage of the "Programa Intensivo em Containers e Kubernetes (PICK)" in 2024. During this initial phase, the focus was on operationalizing a Python application using containers, prioritizing efficiency, availability, and security.
 
@@ -58,7 +58,7 @@ Chainguard is an approach to building container images using the "Distroless" ph
 
 ### Cosign
 
-![Cosign](https://github.com/perestr3lo/giropops-senhas/assets/60358650/d63c7a73-7a14-4255-ae2f-bbd01cdf70f5)
+![image](https://github.com/perestr3lo/giropops-senhas/assets/60358650/d6fdfdf1-b8bd-495e-8990-300ca707f383)
 
 Cosign is a container image signing tool that ensures the authenticity, integrity, and security of images before they are deployed in production environments.
 
