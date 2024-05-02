@@ -1,4 +1,4 @@
-![image](https://github.com/perestr3lo/giropops-senhas/assets/60358650/5f972408-a088-49b4-8ccd-30b17626da61)## Password Manager - LinuxTips 💻
+## Password Manager - LinuxTips 💻
 
 This project was developed during the first stage of the "Programa Intensivo em Containers e Kubernetes (PICK)" in 2024. During this initial phase, the focus was on operationalizing a Python application using containers, prioritizing efficiency, availability, and security.
 
